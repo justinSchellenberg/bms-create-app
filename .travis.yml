@@ -1,0 +1,10 @@
+language: node_js
+notifications:
+  on_success: never
+  on_failure: never
+node_js:
+  - "stable"
+script:
+  - npm run coverage
+after_success:
+  - npm run coveralls
