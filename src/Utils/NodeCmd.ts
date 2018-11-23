@@ -3,10 +3,10 @@ import { cp, exec, ls, mkdir, mv, pwd, test } from 'shelljs';
 const fs = require('fs');
 
 export default class NodeCmdUtil {
-  private static reactModule: string = 'react';
-  private static typescriptModule: string = 'typescript';
-  private static es6Module: string = 'bms-webpack-js-example';
-  private static getDirectoryCommand: string = 'npm config get prefix';
+  public static reactModule: string = 'react';
+  public static typescriptModule: string = 'typescript';
+  public static es6Module: string = 'bms-webpack-js-example';
+  public static getDirectoryCommand: string = 'npm config get prefix';
 
   public static executeCmd(cmd: string): string {
     const res = exec(cmd);
