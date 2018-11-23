@@ -1,5 +1,4 @@
-
-import {cp, exec, ls, mkdir, mv, pwd, test} from 'shelljs';
+import { cp, exec, ls, mkdir, mv, pwd, test } from 'shelljs';
 
 const fs = require('fs');
 
@@ -7,7 +6,7 @@ export default class NodeCmdUtil {
   private static reactModule: string = 'react';
   private static typescriptModule: string = 'typescript';
   private static es6Module: string = 'bms-webpack-js-example';
-  private static getDirectoryCommand: string = "npm config get prefix";
+  private static getDirectoryCommand: string = 'npm config get prefix';
 
   public static executeCmd(cmd: string): string {
     const res = exec(cmd);
@@ -18,10 +17,9 @@ export default class NodeCmdUtil {
   }
 
   public static getNpmModule(type: string | null): string {
-    if (type === "react") {
-      return NodeCmdUtil.reactModule
-    }
-    else if (type === 'tsc') {
+    if (type === 'react') {
+      return NodeCmdUtil.reactModule;
+    } else if (type === 'tsc') {
       return NodeCmdUtil.typescriptModule;
     }
     return NodeCmdUtil.es6Module;
@@ -29,10 +27,10 @@ export default class NodeCmdUtil {
 
   public static validateName(name: string): void {
     if (name.toLowerCase() !== name) {
-      throw new Error("Name can no longer contain capital letters");
+      throw new Error('Name can no longer contain capital letters');
     }
     if (name.charAt(0) === '.' || name.charAt(0) === '_') {
-      throw new Error("The name can’t start with a dot or an underscore.");
+      throw new Error('The name can’t start with a dot or an underscore.');
     }
   }
 
@@ -48,11 +46,11 @@ export default class NodeCmdUtil {
   }
 
   public static isWindows(): boolean {
-    return process.platform === "win32";
+    return process.platform === 'win32';
   }
 
   public static isMac(): boolean {
-    return process.platform === "darwin";
+    return process.platform === 'darwin';
   }
 
   public static getSlash() {
@@ -62,16 +60,14 @@ export default class NodeCmdUtil {
   public static getDirectory(module: string): string {
     const preFixDirectory = NodeCmdUtil.executeCmd(NodeCmdUtil.getDirectoryCommand);
     const directory = NodeCmdUtil.isWindows()
-      ?
-      `${preFixDirectory}${NodeCmdUtil.getSlash()}node_modules${NodeCmdUtil.getSlash()}${module}`
-      :
-      `${preFixDirectory}${NodeCmdUtil.getSlash()}lib${NodeCmdUtil.getSlash()}node_modules${NodeCmdUtil.getSlash()}${module}`;
+      ? `${preFixDirectory}${NodeCmdUtil.getSlash()}node_modules${NodeCmdUtil.getSlash()}${module}`
+      : `${preFixDirectory}${NodeCmdUtil.getSlash()}lib${NodeCmdUtil.getSlash()}node_modules${NodeCmdUtil.getSlash()}${module}`;
 
-    return directory.replace(/(\r\n\t|\n|\r\t)/gm, "");
+    return directory.replace(/(\r\n\t|\n|\r\t)/gm, '');
   }
 
   public static copyFiles(path: string, source: string) {
-    ls(path).forEach((file) => {
+    ls(path).forEach(file => {
       if (file !== 'node_modules' && file !== 'package.json') {
         cp('-Rf', `${path}/${file}`, `./${source}`);
       }
@@ -88,7 +84,7 @@ export default class NodeCmdUtil {
   }
 
   public static getPwd(): string {
-    return pwd()
+    return pwd();
   }
 
   public static getFile(filePath: string) {

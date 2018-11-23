@@ -1,3 +1,3 @@
 import NodeCmdUtil from './NodeCmd';
 
-export { NodeCmdUtil }
+export { NodeCmdUtil };
