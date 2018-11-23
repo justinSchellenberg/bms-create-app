@@ -48,6 +48,9 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0"
     }
   ],
+  "bin": {
+    "bms-create-app": "./dist/index.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-regenerator": "^7.0.0",
