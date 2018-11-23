@@ -30,7 +30,8 @@
     "exclude": [
       "**/*.d.ts",
       "dist/",
-      "node_modules"
+      "node_modules",
+      "src/index.ts"
     ],
     "reporter": [
       "lcov",
