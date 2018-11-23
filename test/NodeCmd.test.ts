@@ -6,14 +6,16 @@ import { pwd } from 'shelljs';
 const expect = chai.expect;
 
 describe('NodeCmd - getNpmModuleDirectory', () => {
-  it('should return The path to global npm directory when given cmd npm config get prefix', () => {
-    expect(NodeCmdUtil.executeCmd('npm config get prefix')).to.have.string('npm');
+  it('should return The path to global npm directory when given cmd npm config get prefix', (done) => {
+    expect(NodeCmdUtil.executeCmd('npm config get prefix').replace(/(\r\n\t|\n|\r\t)/gm, '')).to.be.a('string');
+    done();
   });
-  it('should throw error if the cmd supplied as invalid', () => {
+  it('should throw error if the cmd supplied as invalid', (done) => {
     try {
       expect(NodeCmdUtil.executeCmd('npm invalidcommandsuppollied')).to.throw(Error);
     } catch(err) {
       expect(err.message).to.be.a('string');
+      done();
     }
   })
 });

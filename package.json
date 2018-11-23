@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha -r ts-node/register test/**/*",
+    "test": "mocha --timeout 10000 -r ts-node/register test/**/*",
     "BDD": "onchange ./**/*.ts test/**/*.ts -- npm test",
     "coverage": "nyc mocha -r ts-node/register test/**/*",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
