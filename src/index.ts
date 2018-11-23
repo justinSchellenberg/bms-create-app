@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* tslint:disable:no-console */
 import { NodeCmdUtil } from './Utils';
 
 const chalk = require('chalk');
@@ -30,7 +31,7 @@ try{
   
   const filePath = `${NodeCmdUtil.getPwd()}${NodeCmdUtil.getSlash()}${program.dir}${NodeCmdUtil.getSlash()}package.json`;
   
-  let packageJsonJavascript = JSON.parse(NodeCmdUtil.getFile(filePath));
+  const packageJsonJavascript = JSON.parse(NodeCmdUtil.getFile(filePath));
   
   packageJsonJavascript.version = "0.0.1";
   packageJsonJavascript.name = program.dir;
