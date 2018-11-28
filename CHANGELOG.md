@@ -1,6 +1,6 @@
 # Changelog Notes:
 
-## November 27 / 2018
+## November 27 / 2018  -- 0.1.0
 
 ### Improvements:
  * Added React Scaffold to create-app. Use --dir react to do so.
