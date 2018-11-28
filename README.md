@@ -8,7 +8,7 @@
 
 ## TODO
 [ ] - Build Typescript configuration
-[ ] - Build React configuration.
+[x] - Build React configuration.
 [ ] - Create installation Wiki
 
 

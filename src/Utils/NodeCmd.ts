@@ -3,7 +3,7 @@ import { cp, exec, ls, mkdir, mv, pwd, test } from 'shelljs';
 const fs = require('fs');
 
 export default class NodeCmdUtil {
-  public static reactModule: string = 'react';
+  public static reactModule: string = 'bms-react-js-example';
   public static typescriptModule: string = 'typescript';
   public static es6Module: string = 'bms-webpack-js-example';
   public static getDirectoryCommand: string = 'npm config get prefix';
@@ -19,7 +19,7 @@ export default class NodeCmdUtil {
   public static getNpmModule(type: string | null): string {
     if (type === 'react') {
       return NodeCmdUtil.reactModule;
-    } else if (type === 'tsc') {
+    } else if (type === 'typescript') {
       return NodeCmdUtil.typescriptModule;
     }
     return NodeCmdUtil.es6Module;
