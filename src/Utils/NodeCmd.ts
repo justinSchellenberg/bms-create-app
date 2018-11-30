@@ -70,7 +70,7 @@ export default class NodeCmdUtil {
   }
 
   public static copyFiles(path: string, source: string) {
-    ls(['-A'], path).forEach(file => {
+    ls('-A', path).forEach(file => {
       if (file !== 'node_modules' && file !== 'package.json') {
         cp('-Rf', `${path}/${file}`, `./${source}`);
       }

@@ -1,5 +1,12 @@
 # Changelog Notes:
 
+## November 29 / 2018  -- 0.1.2
+
+### Fixes:
+ * Fix new bug introduced from 0.1.1
+
+
+
 ## November 29 / 2018  -- 0.1.1
 
 ### Improvements:
