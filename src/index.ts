@@ -6,9 +6,9 @@ const chalk = require('chalk');
 const expression = /^(es6|react|typescript)$/i;
 
 const program = require('commander')
-  .version('0.0.1')
+  .version('0.1.1')
   .option('-d, --dir [dir]', 'The directory name to create and scaffold the App in', 'src')
-  .option('-t, --type <type>', 'Application Type (es6|react|typescript)', expression, 'es6')
+  .option('-t, --type <type>', 'Application Type (es6|preact|react|typescript)', expression, 'es6')
   .parse(process.argv);
 
 try {

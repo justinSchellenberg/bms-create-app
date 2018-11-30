@@ -4,6 +4,7 @@ const fs = require('fs');
 
 export default class NodeCmdUtil {
   public static reactModule: string = 'bms-react-js-example';
+  public static peactModule: string = 'bms-preact-example';
   public static typescriptModule: string = 'typescript';
   public static es6Module: string = 'bms-webpack-js-example';
   public static getDirectoryCommand: string = 'npm config get prefix';
@@ -21,6 +22,8 @@ export default class NodeCmdUtil {
       return NodeCmdUtil.reactModule;
     } else if (type === 'typescript') {
       return NodeCmdUtil.typescriptModule;
+    } else if (type === 'preact') {
+      return NodeCmdUtil.peactModule;
     }
     return NodeCmdUtil.es6Module;
   }
@@ -67,7 +70,7 @@ export default class NodeCmdUtil {
   }
 
   public static copyFiles(path: string, source: string) {
-    ls(path).forEach(file => {
+    ls(['-A'], path).forEach(file => {
       if (file !== 'node_modules' && file !== 'package.json') {
         cp('-Rf', `${path}/${file}`, `./${source}`);
       }
