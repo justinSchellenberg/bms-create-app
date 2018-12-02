@@ -16,7 +16,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
+    "version": "npm run format && conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
   },
   "nyc": {
@@ -62,6 +62,7 @@
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.9",
     "chai": "^4.2.0",
+    "conventional-changelog-cli": "^2.0.11",
     "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
