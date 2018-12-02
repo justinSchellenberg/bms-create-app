@@ -124,3 +124,21 @@ describe('NodeCmd - getFile', () => {
     }
   })
 });
+
+describe('NodeCmd - isNpmWarning', () => {
+  const passingPhrase = "Error is  Error: npm WARN @babel/plugin-transform-runtime@7.1.0 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.";
+  const failingPhrase = "Error is  Error: npm ERROR @babel/plugin-transform-runtime@7.1.0 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself."
+  it('should return True if error contains the phrase "npm warn" and variable is set to true', () => {
+    NodeCmdUtil.setIsNpmInstall(true);
+    expect(NodeCmdUtil.isNpmWarning(passingPhrase)).to.be.true;
+  })
+  it('should return false if variable is set to true, but phrase does not contain "npm warn"', () => {
+    NodeCmdUtil.setIsNpmInstall(true);
+    expect(NodeCmdUtil.isNpmWarning(failingPhrase)).to.be.false;
+  })
+  it('should return false if variable is set to false, but phrase does "npm warn"', () => {
+    NodeCmdUtil.setIsNpmInstall(false);
+    expect(NodeCmdUtil.isNpmWarning(passingPhrase)).to.be.false;
+  })
+
+});

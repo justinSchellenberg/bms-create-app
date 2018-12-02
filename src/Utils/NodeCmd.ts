@@ -4,10 +4,15 @@ const fs = require('fs');
 
 export default class NodeCmdUtil {
   public static reactModule: string = 'bms-react-js-example';
-  public static peactModule: string = 'bms-preact-example';
+  public static preactModule: string = 'bms-preact-example';
   public static typescriptModule: string = 'typescript';
   public static es6Module: string = 'bms-webpack-js-example';
   public static getDirectoryCommand: string = 'npm config get prefix';
+  public static isNpmInstall: boolean = false;
+
+  public static setIsNpmInstall(val: boolean) {
+    NodeCmdUtil.isNpmInstall = val;
+  }
 
   public static executeCmd(cmd: string): string {
     const res = exec(cmd);
@@ -23,7 +28,7 @@ export default class NodeCmdUtil {
     } else if (type === 'typescript') {
       return NodeCmdUtil.typescriptModule;
     } else if (type === 'preact') {
-      return NodeCmdUtil.peactModule;
+      return NodeCmdUtil.preactModule;
     }
     return NodeCmdUtil.es6Module;
   }
@@ -99,5 +104,8 @@ export default class NodeCmdUtil {
 
   public static writeFile(filePath: string, data: string): void {
     fs.writeFileSync(filePath, data, 'utf8');
+  }
+  public static isNpmWarning(errMsg: string) {
+    return NodeCmdUtil.isNpmInstall && errMsg.toUpperCase().includes('NPM WARN');
   }
 }

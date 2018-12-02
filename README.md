@@ -27,6 +27,6 @@ Usage: bms-create-app [options]
 Options:
   -V, --version      output the version number
   -d, --dir [dir]    The directory name to create and scaffold the App in (default: "src")
-  -t, --type <type>  Application Type (es6|preact|react|typescript) (default: "es6")
+  -t, --type [type]  Application Type (es6|preact|react|typescript) (default: "es6")
   -h, --help         output usage information
 ```
