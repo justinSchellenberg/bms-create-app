@@ -1,28 +1,16 @@
-# Changelog Notes:
-
-## November 29 / 2018  -- 0.1.2
-
-### Fixes:
- * Fix new bug introduced from 0.1.1
+## [0.2.1](https://github.com/justinSchellenberg/bms-create-app/compare/v0.1.0...v0.2.1) (2018-12-02)
 
 
 
-## November 29 / 2018  -- 0.1.1
-
-### Improvements:
- * Added the preact configuration build to the app. may now be used by specifying --type preact through CLI.
-
-### Fixes:
- * Fixed Bug where . files were not being added into the application.
+# [0.1.0](https://github.com/justinSchellenberg/bms-create-app/compare/v0.0.4...v0.1.0) (2018-11-28)
 
 
 
-## November 27 / 2018  -- 0.1.0
+## [0.0.4](https://github.com/justinSchellenberg/bms-create-app/compare/v0.0.3...v0.0.4) (2018-11-23)
 
-### Improvements:
- * Added React Scaffold to create-app. Use --dir react to do so.
- * Create CHANGELOG
- * Updated README
 
-### Fixes:
-* Fix --dir option to properly reflect what is in README.
+
+## 0.0.3 (2018-11-23)
+
+
+
